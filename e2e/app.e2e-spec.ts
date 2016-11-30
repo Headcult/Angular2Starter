@@ -7,8 +7,8 @@ describe('angular2starter App', function() {
     page = new Angular2starterPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying Starter Kit for Angular 2 Apps', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toBeTruthy();
   });
 });

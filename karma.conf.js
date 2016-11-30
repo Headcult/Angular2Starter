@@ -14,6 +14,10 @@ module.exports = function (config) {
     files: [
       { pattern: './src/test.ts', watched: false }
     ],
+    proxies: {
+      // required for component assets fetched by Angular's compiler
+      '/@angular/material/': '/base/dist/@angular-material/'
+    },
     preprocessors: {
       './src/test.ts': ['angular-cli']
     },

@@ -1,0 +1,5 @@
+@import '../shared/base';
+
+.card-container {
+  @include flex-flow(column nowrap);
+}

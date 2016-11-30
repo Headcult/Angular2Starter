@@ -1,0 +1,23 @@
+@mixin flex-flow($property_nowrap) {
+  flex-flow: $property_nowrap;
+}
+
+md-card {
+  width: auto;
+  box-sizing: border-box;
+  margin: 16px;
+  align-self: center;
+}
+
+md-card:hover {
+  -webkit-box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+  -moz-box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+}
+
+.card-container {
+  @include flex-flow(row nowrap);
+  display: flex;
+}
+
+
+

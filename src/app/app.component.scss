@@ -1,0 +1,20 @@
+$sidenav-md-icon-color: #673ab7;
+
+md-sidenav-layout {
+  background: rgba(0,0,0,0.03);
+}
+
+.secondary {
+  color: rgba(0,0,0,0.54);
+  font-size: xx-small;
+}
+
+.sidenav-md-icon{
+  color: $sidenav-md-icon-color;
+}
+
+.example-fill-remaining-space {
+  // This fills the remaining space, by using flexbox.
+  // Every toolbar row uses a flexbox row layout.
+  flex: 1 1 auto;
+}
