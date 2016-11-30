@@ -17,4 +17,4 @@ install:
 script:
   - ng lint
   - ng build
-  - ng test
+  - ng test --watch false
