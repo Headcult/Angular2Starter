@@ -16,7 +16,6 @@ RUN npm install --unsafe-perm || \
       cat npm-debug.log; \
     fi) && false)
 
-
 COPY . /app/
 EXPOSE 3000
 CMD npm start
