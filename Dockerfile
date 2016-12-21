@@ -19,3 +19,5 @@ RUN npm install --unsafe-perm || \
 COPY . /app/
 EXPOSE 3000
 CMD npm start
+
+
