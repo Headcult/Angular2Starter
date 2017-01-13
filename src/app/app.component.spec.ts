@@ -21,12 +21,14 @@ describe('AppComponent', () => {
 
   it('should create the app', async(() => {
     let fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
     let app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
 
   it(`should have as title 'Starter Kit for Angular 2 Apps'`, async(() => {
     let fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
     let app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Starter Kit for Angular 2 Apps');
   }));
