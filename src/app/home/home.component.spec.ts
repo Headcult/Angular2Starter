@@ -1,11 +1,32 @@
 /* tslint:disable:no-unused-variable */
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
 
-import { TestBed, async } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
+import {MaterialModule} from '@angular/material';
 
-describe('Component: Home', () => {
-  it('should create an instance', () => {
-    // let component = new HomeComponent();
-    // expect(component).toBeTruthy();
+describe('HomeComponent', () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        [MaterialModule.forRoot()],
+      ],
+      declarations: [ HomeComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(HomeComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

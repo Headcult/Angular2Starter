@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import {AuthService} from './auth.service';
-
-declare var gapi: any;
 
 @Component({
   selector: 'app-root',
@@ -32,16 +29,4 @@ export class AppComponent {
     }
   ];
 
-  constructor(public authService: AuthService) {
-
-  }
-
-
-
-  signOut() {
-    let auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
 }

@@ -1,11 +1,32 @@
 /* tslint:disable:no-unused-variable */
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
 
-import { TestBed, async } from '@angular/core/testing';
 import { AccountComponent } from './account.component';
+import {MaterialModule} from '@angular/material';
 
-describe('Component: Account', () => {
-  it('should create an instance', () => {
-    let component = new AccountComponent();
+describe('AccountComponent', () => {
+  let component: AccountComponent;
+  let fixture: ComponentFixture<AccountComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        [MaterialModule.forRoot()],
+      ],
+      declarations: [ AccountComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AccountComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

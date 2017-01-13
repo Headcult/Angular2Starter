@@ -6,6 +6,6 @@ export class Angular2starterPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root md-sidenav-layout')).isPresent();
+    return element(by.css('app-root md-sidenav-layout div md-toolbar div md-toolbar-row button span md-icon')).getText();
   }
 }
