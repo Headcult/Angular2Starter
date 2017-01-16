@@ -6,6 +6,7 @@
 [![dependencies Status](https://david-dm.org/Headcult/Angular2Starter/status.svg)](https://david-dm.org/Headcult/Angular2Starter)
 [![devDependencies Status](https://david-dm.org/Headcult/Angular2Starter/dev-status.svg)](https://david-dm.org/Headcult/Angular2Starter?type=dev)
 
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.25.5.
 
 ## Development server
