@@ -5,8 +5,6 @@ node_js:
   - "5"
 os:
   - linux
-services:
-  - docker
 env:
   global:
     - DBUS_SESSION_BUS_ADDRESS=/dev/null
@@ -14,18 +12,13 @@ env:
     - CHROME_BIN=chromium-browser
 before_script:
   - sh -e /etc/init.d/xvfb start
-
-before_install:
-- docker build -t angular2starter-nodejs .
-- docker run -it -d --name angular2starter -p 3001:8080 angular2starter-nodejs
-- docker ps -a
-
 install:
   - npm install
 script:
   - ng lint
   - ng build
-  - ng test --watch false --code-coverage
+  - ng test --watch=false --code-coverage
+  - (npm start > /dev/null &) && (npm run protractor)
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
