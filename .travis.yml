@@ -22,3 +22,9 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "46d1d6da-8ea5-4ac2-98ad-a09b39295587"
+  on: upgrades
