@@ -14,7 +14,7 @@ app.get('/', function (req, res) {
 
 if (module === require.main) {
   // Start the server
-  var server = app.listen(process.env.port || 8080, function () {
+  var server = app.listen(process.env.port || 3000, function () {
     var port = server.address().port;
 
     console.log('App listening on port %s', port);
