@@ -10,9 +10,9 @@ var root = '/dist/';
 // app.use("/", express.static(__dirname + '/dist'));
 app.use(express.static('dist'));
 
-app.get('/', function (req, res) {
-  res.sendFile('index.html');
-});
+// app.get('/', function (req, res) {
+//   res.render('index.html');
+// });
 
 if (module === require.main) {
     // Start the server
