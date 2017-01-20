@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 if (module === require.main) {
     // Start the server
     app.listen(app.get('port'), function () {
-      console.log('App listening on port', app.get('port'));
+      console.log('App listening on port:', app.get('port'));
       console.log('Press Ctrl+C to quit.');
     });
 }
