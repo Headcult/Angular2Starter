@@ -17,11 +17,10 @@ app.get('/', function (req, res) {
 
 if (module === require.main) {
     // Start the server
-    var server = app.listen(app.get('port'), function () {
-      var port = server.address().port;
-      console.log('App listening on port %s', port);
+    app.listen(app.get('port'), function () {
+      console.log('App listening on port', app.get('port'));
       console.log('Press Ctrl+C to quit.');
-  });
+    });
 }
 
 module.exports = app;
