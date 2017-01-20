@@ -11,8 +11,7 @@ var root = '/dist/';
 app.use(express.static('dist'));
 
 app.get('/', function (req, res) {
-  // res.sendFile('dist/index.html')
-  res.sendFile(__dirname + '/dist/index.html');
+  res.sendFile(__dirname + 'index.html');
 });
 
 if (module === require.main) {
