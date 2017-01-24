@@ -1,28 +1,18 @@
-# Dockerfile extending the generic Node image with application files for a
-# single application.
+# Dockerfile extending the generic Node image with application files for a single application.
 
-FROM node:5-onbuild
-#FROM headcult/angular2starter-nodejs:initial
+FROM headcult/angular2starter-nodejs:initial
+#FROM node:6-alpine
 
 # Create app directory
-#RUN mkdir -p  /app
-#WORKDIR /app
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
 # Install app dependencies
-#COPY package.json /app/
-#COPY . /app/
-
-# You have to specify "--unsafe-perm" with npm install
-# when running as root.  Failing to do this can cause
-# install to appear to succeed even if a preinstall
-# script fails, and may have other adverse consequences
-# as well.
-# This command will also cat the npm-debug.log file after the
-# build, if it exists.
-#RUN npm install --unsafe-perm || ((if [ -f npm-debug.log ]; then cat npm-debug.log; fi) && false)
+COPY package.json /usr/src/app/
+RUN npm install
 
 # Bundle app source
-#COPY . /app/
+COPY . /usr/src/app
 
 EXPOSE 8080
-#CMD [ "npm", "start" ]
+CMD [ "npm", "start" ]
