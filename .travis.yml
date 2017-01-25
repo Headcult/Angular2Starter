@@ -18,7 +18,7 @@ before_script:
 
 before_install:
   - docker build -t angular2starter-nodejs .
-  - docker run -it -d --name angular2starter -p 8080:8080 headcult/angular2starter-nodejs:initial
+  - docker run -it -d --name angular2starter -p 9090:8080 headcult/angular2starter-nodejs:initial
   - docker ps -a
 
 install:
@@ -30,7 +30,7 @@ script:
   - ng test --watch=false --code-coverage
   - (npm start > /dev/null &) && (npm run e2e)
   - docker ps -a
-  - npm run e2e -- --baseUrl="http://192.168.99.100:8080/"
+  - npm run e2e -- --baseUrl="http://localhost:9090/"
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
