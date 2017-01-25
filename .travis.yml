@@ -5,23 +5,37 @@ node_js:
   - "6"
 os:
   - linux
+services:
+  - docker
 env:
   global:
     - DBUS_SESSION_BUS_ADDRESS=/dev/null
     - DISPLAY=:99.0
     - CHROME_BIN=chromium-browser
+
 before_script:
   - sh -e /etc/init.d/xvfb start
+
+before_install:
+  - docker build -t angular2starter-nodejs .
+  - docker run -it -d --name angular2starter -p 8080:8080 headcult/angular2starter-nodejs:initial
+  - docker ps -a
+
 install:
   - npm install
+
 script:
   - ng lint
   - ng build
   - ng test --watch=false --code-coverage
   - (npm start > /dev/null &) && (npm run e2e)
+  - docker ps -a
+  - npm run e2e -- --baseUrl="http://192.168.99.100:8080/"
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - docker tag angular2starter-nodejs:latest headcult/angular2starter-nodejs:initial
+  - docker ps -a
 
 deploy:
   provider: heroku
