@@ -28,7 +28,7 @@ script:
   - ng lint
   - ng build
   - ng test --watch=false --code-coverage
-  - (npm start > /dev/null &) && (npm run e2e)
+#  - (npm start > /dev/null &) && (npm run e2e)
   - docker ps -a
   - npm run e2e -- --baseUrl="http://localhost:9090/"
 
@@ -36,6 +36,8 @@ after_success:
   - bash <(curl -s https://codecov.io/bash)
   - docker tag angular2starter-nodejs:latest headcult/angular2starter-nodejs:initial
   - docker ps -a
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push headcult/angular2starter-nodejs:initial
 
 deploy:
   provider: heroku
