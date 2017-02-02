@@ -1,6 +1,6 @@
 # Dockerfile extending the generic Node image with application files for a single application.
 
-FROM headcult/angular2starter-nodejs:initial
+FROM headcult/angular2starter:dev
 #FROM node:6-alpine
 
 # Create app directory
