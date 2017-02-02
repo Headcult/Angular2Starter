@@ -17,8 +17,8 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 
 before_install:
-  - docker build -t angular2starter-nodejs .
-  - docker run -it -d --name angular2starter -p 9090:8080 headcult/angular2starter-nodejs:initial
+  - docker build -t angular2starter .
+  - docker run -it -d --name angular2starter -p 9090:8080 headcult/angular2starter:dev
   - docker ps -a
 
 install:
@@ -34,14 +34,14 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - docker tag angular2starter-nodejs:latest headcult/angular2starter-nodejs:initial
+  - docker tag angular2starter:dev headcult/angular2starter:dev
   - docker ps -a
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push headcult/angular2starter-nodejs:initial
+  - docker push headcult/angular2starter:dev
 
 deploy:
   provider: heroku
   api_key:
     secure: "46d1d6da-8ea5-4ac2-98ad-a09b39295587"
-  on: upgrades
+  on: dev
   app: angular2starter-headcult
