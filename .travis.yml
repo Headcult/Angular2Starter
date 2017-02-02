@@ -44,4 +44,4 @@ deploy:
   api_key:
     secure: "46d1d6da-8ea5-4ac2-98ad-a09b39295587"
   on: master
-  app: angular2starter-headcult
+  app: angular2starter-master
