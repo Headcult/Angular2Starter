@@ -4,8 +4,8 @@
   "license": "MIT",
   "angular-cli": {},
   "engines": {
-    "node": "6.5.0",
-    "npm": "3.10.3"
+    "node": "6.9.5",
+    "npm": "3.10.10"
   },
   "scripts": {
     "start": "node server.js",
@@ -23,24 +23,24 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "2.4.5",
-    "@angular/compiler": "2.4.5",
-    "@angular/core": "2.4.5",
-    "@angular/forms": "2.4.5",
-    "@angular/http": "2.4.5",
+    "@angular/common": "2.4.7",
+    "@angular/compiler": "2.4.7",
+    "@angular/core": "2.4.7",
+    "@angular/forms": "2.4.7",
+    "@angular/http": "2.4.7",
     "@angular/material": "2.0.0-beta.1",
-    "@angular/platform-browser": "2.4.5",
-    "@angular/platform-browser-dynamic": "2.4.5",
-    "@angular/router": "3.4.5",
+    "@angular/platform-browser": "2.4.7",
+    "@angular/platform-browser-dynamic": "2.4.7",
+    "@angular/router": "3.4.7",
     "core-js": "^2.4.1",
     "express": "4.14.0",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.7.6",
-    "angular-cli": "1.0.0-beta.26"
+    "@angular/cli": "1.0.0-beta.31",
+    "@angular/compiler-cli": "2.4.7"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "2.4.5",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
     "codelyzer": "~2.0.0-beta.4",
@@ -49,8 +49,8 @@
     "karma": "1.2.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-cli": "^1.0.1",
+    "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-jasmine": "^1.0.2",
-    "karma-remap-istanbul": "^0.2.1",
     "protractor": "~4.0.13",
     "ts-node": "1.2.1",
     "tslint": "^4.3.0",

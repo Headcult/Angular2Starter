@@ -2,7 +2,7 @@ dist: trusty
 sudo: required
 language: node_js
 node_js:
-  - "6"
+  - "6.9.5"
 os:
   - linux
 services:
@@ -16,11 +16,6 @@ env:
 before_script:
   - sh -e /etc/init.d/xvfb start
 
-before_install:
-  - docker build -t angular2starter .
-  - docker run -it -d --name angular2starter -p 9090:8080 headcult/angular2starter:master
-  - docker ps -a
-
 install:
   - npm install
 
@@ -29,13 +24,13 @@ script:
   - ng build
   - ng test --watch=false --code-coverage
 #  - (npm start > /dev/null &) && (npm run e2e)
-  - docker ps -a
+  - docker-compose up -d
+  - docker-compose ps
   - npm run e2e -- --baseUrl="http://localhost:9090/"
+  - docker-compose down
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - docker tag angular2starter:master headcult/angular2starter:master
-  - docker ps -a
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push headcult/angular2starter:master
 

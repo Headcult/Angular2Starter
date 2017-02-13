@@ -1,0 +1,10 @@
+# specify docker-compose version
+version: '2'
+
+# Define the services/containers to be run
+services:
+  web: # name of the first service
+    build: . # specify the directory of the Dockerfile
+    image: headcult/angular2starter:master
+    ports:
+     - "9090:8080" # specify port forewarding
