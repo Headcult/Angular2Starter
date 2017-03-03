@@ -24,7 +24,7 @@ script:
 #  - (npm start > /dev/null &) && (npm run e2e)
   - docker-compose up -d
   - docker-compose ps
-  - docker-compose exec web npm run lint
+  - docker-compose exec web npm run ng-lint
   - docker-compose exec web npm run ng-build-prod
   - npm run e2e -- --baseUrl="http://localhost:9090/"
   - docker-compose down
