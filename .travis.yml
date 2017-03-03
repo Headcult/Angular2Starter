@@ -31,8 +31,8 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push headcult/angular2starter:dev
+#  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+#  - docker push headcult/angular2starter:dev
 
 deploy:
   provider: heroku
