@@ -13,7 +13,7 @@ describe('AboutComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        [MaterialModule.forRoot()],
+        MaterialModule,
       ],
       declarations: [ AboutComponent ]
     })

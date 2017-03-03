@@ -13,7 +13,7 @@ describe('HomeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        [MaterialModule.forRoot()],
+        MaterialModule,
       ],
       declarations: [ HomeComponent ]
     })

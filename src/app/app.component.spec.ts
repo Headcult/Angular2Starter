@@ -5,24 +5,23 @@ import { AppComponent } from './app.component';
 import {MaterialModule} from '@angular/material';
 import {RouterTestingModule} from '@angular/router/testing';
 
-describe('AppComponent', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        [MaterialModule.forRoot()],
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    });
-    TestBed.compileComponents();
-  });
+  describe('AppComponent', () => {
+    beforeEach(async(() => {
+      TestBed.configureTestingModule({
+        imports: [
+          MaterialModule,
+          RouterTestingModule
+        ],
+        declarations: [
+          AppComponent
+        ],
+      }).compileComponents();
+    }));
 
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
     const app = fixture.debugElement.componentInstance;
+    fixture.detectChanges();
     expect(app).toBeTruthy();
   }));
 
