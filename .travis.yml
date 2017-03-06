@@ -20,23 +20,24 @@ install:
   - npm install
 
 script:
-  - ng lint
-  - ng build
   - ng test --watch=false --code-coverage
 #  - (npm start > /dev/null &) && (npm run e2e)
   - docker-compose up -d
   - docker-compose ps
+  - docker-compose exec web npm run ng-lint
+  - docker-compose exec web npm run ng-build-prod
   - npm run e2e -- --baseUrl="http://localhost:9090/"
   - docker-compose down
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push headcult/angular2starter:master
+  - docker tag angular2starter_web:latest headcult/angular2starter:dev
+  - docker push headcult/angular2starter:dev
 
 deploy:
   provider: heroku
   api_key:
     secure: "46d1d6da-8ea5-4ac2-98ad-a09b39295587"
-  on: master
-  app: angular2starter-master
+  on: dev
+  app: angular2starter-dev

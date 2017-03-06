@@ -13,7 +13,7 @@ describe('AccountComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        [MaterialModule.forRoot()],
+        MaterialModule,
       ],
       declarations: [ AccountComponent ]
     })

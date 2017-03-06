@@ -1,12 +1,13 @@
 # Angular2starter
 
-[![Build Status](https://travis-ci.org/Headcult/Angular2Starter.svg?branch=master)](https://travis-ci.org/Headcult/Angular2Starter
-) [![codecov](https://codecov.io/gh/Headcult/Angular2Starter/branch/master/graph/badge.svg)](https://codecov.io/gh/Headcult/Angular2Starter)
+[![Build Status](https://travis-ci.org/Headcult/Angular2Starter.svg?branch=dev)](https://travis-ci.org/Headcult/Angular2Starter
+) [![codecov](https://codecov.io/gh/Headcult/Angular2Starter/branch/dev/graph/badge.svg)](https://codecov.io/gh/Headcult/Angular2Starter)
 [![Dependency Status](https://dependencyci.com/github/Headcult/Angular2Starter/badge)](https://dependencyci.com/github/Headcult/Angular2Starter)
 [![dependencies Status](https://david-dm.org/Headcult/Angular2Starter/status.svg)](https://david-dm.org/Headcult/Angular2Starter)
 [![devDependencies Status](https://david-dm.org/Headcult/Angular2Starter/dev-status.svg)](https://david-dm.org/Headcult/Angular2Starter?type=dev)
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.31.
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.2.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -28,10 +29,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
 
-## Deploying to GitHub Pages
-
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
-
 ## Further help
 
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

@@ -16,7 +16,7 @@ import { AccountComponent } from './account/account.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    [MaterialModule.forRoot()],
+    MaterialModule,
     AppRoutingModule
   ],
   declarations: [

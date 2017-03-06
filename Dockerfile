@@ -1,6 +1,6 @@
 # Create image based on my own image or the official Node 6-alpine image from dockerhub
-FROM headcult/angular2starter:master
-#FROM node:6-alpine
+#FROM headcult/angular2starter:dev
+FROM node:6.10.0-alpine
 
 # Create a directory where our app will be placed
 RUN mkdir -p /usr/src/app
