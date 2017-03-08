@@ -4,7 +4,7 @@
 
 ###### Dev branch: [![Build Status](https://travis-ci.org/Headcult/Angular2Starter.svg?branch=dev)](https://travis-ci.org/Headcult/Angular2Starter) [![codecov](https://codecov.io/gh/Headcult/Angular2Starter/branch/dev/graph/badge.svg)](https://codecov.io/gh/Headcult/Angular2Starter)
 
-###### All branches [![Dependency Status](https://dependencyci.com/github/Headcult/Angular2Starter/badge)](https://dependencyci.com/github/Headcult/Angular2Starter)
+###### All branches: [![Dependency Status](https://dependencyci.com/github/Headcult/Angular2Starter/badge)](https://dependencyci.com/github/Headcult/Angular2Starter)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.2.
 
