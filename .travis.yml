@@ -31,13 +31,19 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker tag angular2starter_web:latest headcult/angular2starter:master
-  - docker push headcult/angular2starter:master
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      docker tag angular2starter_web:latest headcult/angular2starter:master;
+      docker push headcult/angular2starter:master;
+    else if [ "$TRAVIS_BRANCH" == "dev" ]; then
+      docker tag angular2starter_web:latest headcult/angular2starter:dev;
+      docker push headcult/angular2starter:dev;
+    fi;
 
 deploy:
   provider: heroku
   api_key:
     secure: "46d1d6da-8ea5-4ac2-98ad-a09b39295587"
-  on: master
-  app: angular2starter-master
+  app:
+    master: angular2starter-master
+    dev: angular2starter-dev
