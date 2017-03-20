@@ -7,9 +7,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const http = require('http');
 
-// Get our API routes
-const api = require('./routes/api');
-
 // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -25,8 +22,9 @@ app.use(function(req, res, next) {
 const distDir = __dirname + "/../" + "/dist/";
 app.use(express.static(distDir));
 
-// Set our api routes
-app.use('/', api);
+app.use('/*', function(req, res) {
+  res.sendFile(path.join(__dirname + '"/../dist/index.html'));
+});
 
 // Get port from environment and store in Express.
 const port = process.env.PORT || '8080';
