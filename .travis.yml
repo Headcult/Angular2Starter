@@ -1,6 +1,7 @@
 dist: trusty
 sudo: required
 language: node_js
+cache: false
 node_js:
   - "6.9.5"
 os:
