@@ -14,8 +14,10 @@ env:
     - CHROME_BIN=chromium-browser
 
 before_script:
-  - yarn add --force node-sass # https://github.com/yarnpkg/yarn/issues/1981
   - sh -e /etc/init.d/xvfb start
+
+install:
+  - npm install
 
 script:
   - ng test --watch=false --code-coverage
