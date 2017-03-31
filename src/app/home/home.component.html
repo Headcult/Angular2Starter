@@ -1,44 +1,30 @@
+<div class="search-container">
+  <form>
+    <table style="width: 100%" cellspacing="0">
+      <tr>
+        <td>
+          <md-input-container>
+            <input mdInput #cityName placeholder="Your City of Interest" required>
+          </md-input-container>
+        </td>
+        <td>
+          <div *ngIf="cityName.value; else elseBlock">
+            <button md-mini-fab (click)="searchWeatherByCity(cityName.value)"><md-icon>search</md-icon></button>
+          </div>
+          <ng-template #elseBlock>
+            <button md-mini-fab (click)="searchWeatherByCity(cityName.value)" disabled><md-icon>search</md-icon></button>
+          </ng-template>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
 <div class="card-container">
-  <md-card>
-    <md-card-subtitle>Local Area</md-card-subtitle>
-    <md-card-title>Weather</md-card-title>
+  <md-card *ngIf="weatherResults">
+    <md-card-subtitle>Weather</md-card-subtitle>
+    <md-card-title>{{weatherResults?.name}}, {{weatherResults?.sys.country}}</md-card-title>
     <md-card-content>
-      <p>This is supporting text.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
-    </md-card-content>
-    <md-card-actions>
-      <button md-button>DETAILS</button>
-      <button md-button>SHARE</button>
-    </md-card-actions>
+      <span class="main-temp">{{weatherResults?.main.temp}} °C</span>
+   </md-card-content>
   </md-card>
-
-  <md-card>
-    <md-card-subtitle>Location Based</md-card-subtitle>
-    <md-card-title>Events</md-card-title>
-    <md-card-content>
-      <p>This is supporting text.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
-    </md-card-content>
-    <md-card-actions>
-      <button md-button>DETAILS</button>
-      <button md-button>SHARE</button>
-    </md-card-actions>
-  </md-card>
-
-  <md-card>
-    <md-card-subtitle>Priority Based</md-card-subtitle>
-    <md-card-title>Alerts</md-card-title>
-    <md-card-content>
-      <p>This is supporting text.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
-    </md-card-content>
-    <md-card-actions>
-      <button md-button>DETAILS</button>
-      <button md-button>SHARE</button>
-    </md-card-actions>
-  </md-card>
-
 </div>
