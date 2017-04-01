@@ -12,7 +12,7 @@ export class WeatherService {
   weatherTitle = 'Weather details here!!!';
 
   getWeather(city: string): Promise<any> {
-    const url = 'http://localhost:10010/weather?city=' + city;
+    const url = 'https://weather-service-dev.herokuapp.com/weather?city=' + city;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json() as Weather[])
